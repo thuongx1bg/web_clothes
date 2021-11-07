@@ -1,0 +1,6 @@
+.image_detail_product {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    margin-top: 14px;
+}
