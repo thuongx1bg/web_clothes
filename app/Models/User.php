@@ -32,7 +32,29 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+    public function roles(){
+        return $this->belongsToMany(Role::class,'role_user','user_id','role_id');
+    }
 
+    public function checkPermisstionsAccess($permisstionCheck){
+        // B1 lay dược tất cả các quyền của user đăng nhập hệ thông
+        $roles=auth()->user()->roles;
+        // dd($roles);
+        foreach ($roles as $role){
+            $permisstions =$role->permisstions;
+            // dd($permisstions);
+            if($permisstions->contains('key_code',$permisstionCheck)){
+                return true;
+            }
+            
+        }
+       
+        return false;
+        //B2 So sánh  giá trj dựa vào cua router hiện tại xem có tồn tại trong các quyền mình lấy được hay không
+       
+    }
+
+    
     /**
      * The attributes that should be cast.
      *

@@ -14,6 +14,7 @@ class CategoryFrontEnd extends Controller
     private $category;private $product;
     public function __construct(Slider $slider, Setting $setting,Category $category,Product $product)
     {
+        
         $this->slider=$slider;
         $this->setting=$setting;
         $this->category=$category;

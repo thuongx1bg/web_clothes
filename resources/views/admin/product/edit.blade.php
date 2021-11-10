@@ -82,7 +82,9 @@
                         </div>
                         <div class="form-group">
                             <label>Nhập nội dung</label>
-                            <textarea class="form-control tynimce_editor_init" rows="3" name="contents">{{$product->content}}</textarea>
+                            <textarea
+                            id="ckeditor2"
+                            class="form-control tynimce_editor_init" rows="3" name="contents">{{$product->content}}</textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Submit</button>
@@ -101,11 +103,9 @@
 
 @section('js')
 <script src="{{asset('vendors/select2/select2.min.js')}}"></script>
-<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+
 <script src="{{asset('admins/products/add/add.js')}}"></script>
-<script>
-
-</script>
-
 
 @endsection
+
+

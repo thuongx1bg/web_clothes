@@ -23,7 +23,7 @@
 			
 
 			<div class="register-req">
-				<p>Vui lòng đăng nhập hoặc đăng ký để thanh toán giỏ hàng</p>
+				<p>Vui lòng điền đầy đủ thông tin cho đơn hàng</p>
 			</div><!--/register-req-->
 
 			<div class="shopper-informations" >

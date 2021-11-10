@@ -169,7 +169,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Thương</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{Auth::user()->name}}</span>
                                 <img class="img-profile rounded-circle"
                                     src="https://scontent.fhan5-11.fna.fbcdn.net/v/t1.6435-9/67920375_2368242830108703_3941397393395679232_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=174925&_nc_ohc=90HJQ6vAlIkAX84Wl76&tn=7v99mQlaL-Icv9pX&_nc_ht=scontent.fhan5-11.fna&oh=b5743e53c0e9d7e226400c9bda22a1e0&oe=61A6BD46 ">
                             </a>
