@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('title')
 <title>
-    Trang chủ
+User
 </title>
 @endsection
 

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('title')
 <title>
-    Trang chủ
+    Slider
 </title>
 @endsection
 @section('css')
@@ -11,7 +11,7 @@
 
 <div class="content-wrapper">
 
-    @include('patials.content-header',['name'=>'Slider','key'=>'Add'])
+    @include('patials.content-header',['name'=>'Slider','key'=>'Edit'])
 
     <div class="content">
         <div class="container-fluid">

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('title')
 <title>
-    Trang chủ
+    Slider
 </title>
 @endsection
 @section('content')
