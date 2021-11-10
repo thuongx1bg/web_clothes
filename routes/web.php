@@ -198,6 +198,9 @@ Route::get('trangchu',[
 Route::post('search',[
     Fe_Home::class, 'search'
 ])->name('search');
+Route::get('contact',[
+    Fe_Home::class, 'contact'
+])->name('contact');
 
 Route::prefix('fe')->group(function(){
     Route::prefix('dmsp')->group(function(){

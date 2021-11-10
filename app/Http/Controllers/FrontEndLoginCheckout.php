@@ -9,22 +9,36 @@ use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
+use App\Models\Slider;
+use App\Models\Setting;
+use App\Models\Category;
+use App\Models\Product;
 session_start();
 class FrontEndLoginCheckout extends Controller
 {
     private $customer;
     private $shipping;
-    public function __construct(Customer $customer,Shipping $shipping)
+    private $slider;
+    private $setting;
+    private $category;private $product;
+    public function __construct(Customer $customer,Shipping $shipping,Slider $slider, Setting $setting,Category $category,Product $product)
     {
         $this->customer=$customer;
         $this->shipping=$shipping;
+        $this->slider=$slider;
+        $this->setting=$setting;
+        $this->category=$category;
+        $this->product=$product;
     }
     public function logincheckout(){
-        return view('fe.login');
+        $settings=$this->setting->all();
+        $categories=$this->category->where('parent_id','0')->orderby('id','desc')->get();
+        return view('fe.login',compact('settings','categories'));
     }
     public function checkout(){
-        return view('fe.checkout');
+        $settings=$this->setting->all();
+        $categories=$this->category->where('parent_id','0')->orderby('id','desc')->get();
+        return view('fe.checkout',compact('settings','categories'));
     }
     public function register(Request $request){
         $request->validate([
@@ -47,6 +61,11 @@ class FrontEndLoginCheckout extends Controller
         return view('fe.checkout');
     }
     public function login(Request $request){
+
+        //truyen thông tin header 
+        $settings=$this->setting->all();
+        $categories=$this->category->where('parent_id','0')->orderby('id','desc')->get();
+        //end
         $email=$request->email;
         $password=$request->password;
         $result=DB::table('customers')->where('email',$email)->where('password',$password)->get();
@@ -54,9 +73,9 @@ class FrontEndLoginCheckout extends Controller
             $id=DB::table('customers')->where('email',$request->email)->value('id');
             
             session()->put('id',$id);
-            return view('fe.checkout');
+            return view('fe.checkout',compact('settings','categories'));
         }else{
-            return view('fe.login');
+            return view('fe.login',compact('settings','categories'));
         }
     }
     public function store_order(Request $request){
@@ -73,6 +92,12 @@ class FrontEndLoginCheckout extends Controller
         return redirect()->route('payment');
     }
     public function order_place(Request $request){
+  //truyen thông tin header 
+  $settings=$this->setting->all();
+  $categories=$this->category->where('parent_id','0')->orderby('id','desc')->get();
+  //end
+
+
         // insert payment-method
         $data=array();
         $data['method']=$request->payment_option;
@@ -103,11 +128,11 @@ class FrontEndLoginCheckout extends Controller
             if($data['method']==1){
                 Cart::destroy();
 
-                return view('fe.thanhtoanxong');
+                return view('fe.thanhtoanxong',compact('settings','categories'));
             }else{
                 Cart::destroy();
 
-                return view('fe.thanhtoanxong');
+                return view('fe.thanhtoanxong',compact('settings','categories'));
             }
             // return redirect()->route('payment');
         
@@ -119,7 +144,11 @@ class FrontEndLoginCheckout extends Controller
         return redirect()->route('fe.home');
     }
     public function payment(){
-        return view('fe.payment');
+        //truyen thông tin header 
+        $settings=$this->setting->all();
+        $categories=$this->category->where('parent_id','0')->orderby('id','desc')->get();
+        //end
+        return view('fe.payment',compact('settings','categories'));
     }
 
 }

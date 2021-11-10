@@ -114,10 +114,18 @@ trẻ phát triển chiều cao vượt trội- NuBest Tall.</p>
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center abc">
+										<form action="{{route('save_cart')}}" method="POST">
+								@csrf
 											<img src="{{$product->feature_image_path}}" alt="" />
 											<h2>{{$product->price}} VNĐ</h2>
 											<p>{{$product->name}}</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
+											<input type="hidden" value="1" name="qty" />
+									<input type="hidden" name="product_hidden" value="{{$product->id}}">
+											<button type="submit" class="btn btn-fefault cart">
+										<i class="fa fa-shopping-cart"></i>
+										Thêm vào giỏ hàng
+									</button>
+									</form>
 										</div>
 										
 								</div>

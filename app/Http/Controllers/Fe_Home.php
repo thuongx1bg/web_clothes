@@ -42,6 +42,16 @@ class Fe_Home extends Controller
         return view('fe.search',compact('settings','categories','products'));
        
     }
+    public function contact()
+    {
+        
+        $settings=$this->setting->all();
+        $categories=$this->category->where('parent_id','0')->orderby('id','desc')->get();
+        
+        return view('fe.contact',compact('settings','categories'));
+     
+    }
+
     
    
     
