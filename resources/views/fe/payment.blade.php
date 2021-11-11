@@ -91,10 +91,20 @@
                 @csrf
 			<div class="payment-options">
 					<span>
-						<label><input name="payment_option" value="1" type="checkbox">Thanh toán bằng thẻ ATM</label>
+						<label><input name="payment_option" value="1" type="checkbox" > Thanh toán bằng thẻ ATM <br>
+					--Ngân Hàng: Viettinbank <br>
+					--Stk: 123456789 <br>
+					--Tên chủ tài Khoản: Nguyễn Văn Thương
+					</label>
+
 					</span>
 					<span>
-						<label><input name="payment_option" value="2" type="checkbox"> Thanh toán khi nhận hàng</label>
+						<label><input name="payment_option" value="2" type="checkbox"> Thanh toán khi nhận hàng <br>
+
+						<br>
+						<br>
+						<br>
+					</label>
 					</span>
 					<input type="submit" value="Đặt hàng" name="send_order_place" class="btn btn-primary btn-sm">
 			</div>
