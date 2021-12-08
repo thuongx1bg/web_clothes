@@ -21,11 +21,17 @@
 						<form action="{{route('login_customer')}}" method="POST">
 							@csrf
 							<input type="text" placeholder="Email" name="email"/>
+							@error('email')
+    								<div class="alert alert-danger">{{ $message }}</div>
+								@enderror
 							<input type="password" placeholder="Password" name="password" />
-							<span>
+							@error('password')
+    								<div class="alert alert-danger">{{ $message }}</div>
+								@enderror
+							<!-- <span>
 								<input type="checkbox" class="checkbox"> 
 								Ghi nhớ đăng nhập
-							</span>
+							</span> -->
 							<button type="submit" class="btn btn-default">Đăng nhập</button>
 						</form>
 					</div><!--/login form-->

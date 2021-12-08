@@ -66,6 +66,12 @@ class FrontEndLoginCheckout extends Controller
         $settings=$this->setting->all();
         $categories=$this->category->where('parent_id','0')->orderby('id','desc')->get();
         //end
+        $request->validate([
+           
+            'email'            => 'required|email',     // required and must be unique in the ducks table
+            'password'         => 'required',
+            
+        ]);
         $email=$request->email;
         $password=$request->password;
         $result=DB::table('customers')->where('email',$email)->where('password',$password)->get();

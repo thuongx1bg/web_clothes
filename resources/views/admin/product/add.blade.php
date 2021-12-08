@@ -107,6 +107,7 @@
                             <div class="form-group">
                                 <label>Nhập nội dung</label>
                                 <textarea
+
                                
                                     name="contents"
                                     class="@error('contents')
@@ -131,6 +132,7 @@
 @endsection
 
 @section('js')
+
 <script src="{{asset('vendors/select2/select2.min.js')}}"></script>
 <script src="{{asset('admins/products/add/add.js')}}"></script>
 
