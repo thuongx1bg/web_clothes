@@ -28,7 +28,7 @@ class Fe_Home extends Controller
         $sliders=$this->slider->latest()->paginate(3);
         $settings=$this->setting->all();
         $categories=$this->category->where('parent_id','0')->orderby('id','desc')->get();
-        $products=$this->product->where('category_id','3')->orderby('id','desc')->limit(6)->get();
+        $products=$this->product->where('category_id','14')->orderby('id','desc')->limit(6)->get();
         return view('fe.home',compact('sliders','settings','categories','products'));
        
     }

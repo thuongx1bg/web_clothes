@@ -37,7 +37,7 @@ class FrontEndCart extends Controller
         $data['weight']=1;
         $data['options']['image']=$product_infor->feature_image_path;
         Cart::add($data);
-        Cart::setGlobalTax(10);
+        Cart::setGlobalTax(5);
         return redirect()->route('show_cart');
         
        

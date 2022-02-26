@@ -57,8 +57,9 @@ class FrontEndLoginCheckout extends Controller
         $this->customer->create($data);
         $id=DB::table('customers')->where('email',$request->email)->value('id');
         session()->put('id',$id);
-       
-        return view('fe.checkout');
+        $settings=$this->setting->all();
+        $categories=$this->category->where('parent_id','0')->orderby('id','desc')->get();
+        return view('fe.checkout',compact('settings','categories'));
     }
     public function login(Request $request){
 
@@ -74,13 +75,16 @@ class FrontEndLoginCheckout extends Controller
         ]);
         $email=$request->email;
         $password=$request->password;
-        $result=DB::table('customers')->where('email',$email)->where('password',$password)->get();
+        $result=DB::table('customers')->where('email',$email)->where('password',$password)->value('id');
+       
+        
         if($result){
             $id=DB::table('customers')->where('email',$request->email)->value('id');
             
             session()->put('id',$id);
             return view('fe.checkout',compact('settings','categories'));
         }else{
+            session()->flash('status', 'Tài khoản hoặc mật khẩu không đúng');
             return view('fe.login',compact('settings','categories'));
         }
     }

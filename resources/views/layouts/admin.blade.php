@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     @yield('title')
-    <link rel='icon' href="https://file.hstatic.net/200000280689/file/logo_53e5f5c2a41a431aaf9b9ebb310f2abb.png"  />
+    <link rel='icon' href="https://www.sporter.vn/wp-content/uploads/2017/05/logo.png"  />
     <!-- Custom fonts for this template-->
     <link href="/template/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link

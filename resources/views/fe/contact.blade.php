@@ -52,11 +52,11 @@
 	    			<div class="contact-info">
 	    				<h2 class="title text-center">Thông tin liên lạc</h2>
 	    				<address>
-	    					<p>Highclub Inc.</p>
-							<p>Số 46 Kim Hoa- Đống Đa- Hà Nội</p>
+	    					<p>Sporter Inc.</p>
+							<p>Số 100 Kim Hoa- Đống Đa- Hà Nội</p>
 							<p>Hà Nội Việt Nam</p>
 							<p>Số điện thoại: +2346 17 38 93</p>
-							<p>Email: Highclub@gmail.com</p>
+							<p>Email: Ocsenshop@gmail.com</p>
 	    				</address>
 	    				<div class="social-networks">
 	    					<h2 class="title text-center">Liên lạc qua một số trang mạng xã hội</h2>

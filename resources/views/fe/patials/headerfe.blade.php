@@ -33,7 +33,7 @@
 				<div class="row">
 					<div class="col-md-4 clearfix">
 						<div class="logo pull-left">
-							<a href="{{route('fe.home')}}"><img style="height:39px; width:139px"  src="https://file.hstatic.net/200000280689/file/newlogo_hc_den_0590f369aec14b9b9e925158204a3acf.png" alt="" /></a>
+							<a href="{{route('fe.home')}}"><img style="height:39px; width:139px"  src="https://mcdn.nhanh.vn/store/15049/store_1604242587_766.png" alt="" /></a>
 						</div>
 						<!-- <div class="btn-group pull-right clearfix">
 							<div class="btn-group">
@@ -124,14 +124,14 @@
 										<li><a href="login.html">Login</a></li>  -->
                                     </ul>
                                 </li> 
-								<li class="dropdown"><a href="#">Tin tức<i class="fa fa-angle-down"></i></a>
+								<!-- <li class="dropdown"><a href="#">Tin tức<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="blog.html">Blog List</a></li>
 										<li><a href="blog-single.html">Blog Single</a></li>
                                     </ul>
-                                </li> 
+                                </li>  -->
 								<li><a href="{{route('show_cart')}}">Giỏ hàng</a></li>
-								<li><a href="{{route('contact')}}">Contact</a></li>
+								<li><a href="{{route('contact')}}">Liên lạc</a></li>
 							</ul>
 						</div>
 					</div>

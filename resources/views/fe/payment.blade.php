@@ -94,7 +94,15 @@
 						<label><input name="payment_option" value="1" type="checkbox" > Thanh toán bằng thẻ ATM <br>
 					--Ngân Hàng: Viettinbank <br>
 					--Stk: 123456789 <br>
-					--Tên chủ tài Khoản: Nguyễn Văn Thương
+					--Tên chủ tài Khoản: Vũ Diệu Linh<br>
+					--Nội dung chuyển khoản:  <h4>SP 
+					<?php
+ 
+						$permitted_chars = '0123456789ABCDEFGHJK';
+						// Output: 54esmdr0qf
+						echo substr(str_shuffle($permitted_chars), 0, 10);
+ 						?>&ensp; <br>(Vui lòng ghi lại nội dung chuyển khoản để nhân viên kiểm duyệt)</h4>
+
 					</label>
 
 					</span>
@@ -104,6 +112,8 @@
 						<br>
 						<br>
 						<br>
+						<br>
+						<br> <h4></h4><br>
 					</label>
 					</span>
 					<input type="submit" value="Đặt hàng" name="send_order_place" class="btn btn-primary btn-sm">

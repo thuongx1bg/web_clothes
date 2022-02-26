@@ -5,7 +5,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-user-shield"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Admin  <sup>HighClub </sup></div>
+                <div class="sidebar-brand-text mx-3">Admin  <sup>Ocsenshop </sup></div>
             </a>
 
             <!-- Divider -->
@@ -23,7 +23,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-            Manager
+            Options
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->

@@ -72,13 +72,6 @@ Sản phầm chi tiết
 trẻ phát triển chiều cao vượt trội- NuBest Tall.</p>
 						</div><!--/brands_products-->
 						
-						<div class="price-range"><!--price-range-->
-							<h2>Price Range</h2>
-							<div class="well">
-								 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
-								 <b>$ 0</b> <b class="pull-right">$ 600</b>
-							</div>
-						</div><!--/price-range-->
 						
 						
 						
@@ -157,16 +150,16 @@ trẻ phát triển chiều cao vượt trội- NuBest Tall.</p>
 					<div class="category-tab shop-details-tab"><!--category-tab-->
 						<div class="col-sm-12">
 							<ul class="nav nav-tabs">
-								<li><a href="#details" data-toggle="tab">Mô tả sản phẩm</a></li>
+								<li class="active"><a href="#details" data-toggle="tab">Mô tả sản phẩm</a></li>
 								
 								<!-- <li><a href="#tag" data-toggle="tab">Tag</a></li> -->
-								<li class="active"><a href="#reviews" data-toggle="tab">Reviews (5)</a></li>
+								<!-- <li ><a href="#reviews" data-toggle="tab">Reviews (5)</a></li> -->
 							</ul>
 						</div>
 						<div class="tab-content">
-							<div class="tab-pane fade" id="details" >
+							<div class="tab-pane fade active in" id="details" >
 							<p>{{$products->content}}</p>
-									<p><b>Highclub</b></p>
+									<p><b>Sporter</b></p>
 							</div>
 							
 							<!-- <div class="tab-pane fade" id="tag" >
@@ -220,7 +213,7 @@ trẻ phát triển chiều cao vượt trội- NuBest Tall.</p>
 								</div>
 							</div> -->
 							
-							<div class="tab-pane fade active in" id="reviews" >
+							<!-- <div class="tab-pane fade  " id="reviews" >
 								<div class="col-sm-12">
 									<ul>
 										<li><a href=""><i class="fa fa-user"></i>EUGEN</a></li>
@@ -243,7 +236,7 @@ trẻ phát triển chiều cao vượt trội- NuBest Tall.</p>
 									</form>
 								</div>
 							</div>
-							
+							 -->
 						</div>
 					</div><!--/category-tab-->
 					

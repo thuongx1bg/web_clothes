@@ -16,7 +16,8 @@ class AdminOrderController extends Controller
         $this->order=$order;
     }
     public function index(){
-        $order_data=DB::table('orders')->join('customers','orders.customer_id','=','customers.id')->select('customers.name','orders.id','orders.total','orders.status')->get();
+        $order_data=DB::table('orders')->join('customers','orders.customer_id','=','customers.id')
+        ->select('customers.name','orders.id','orders.total','orders.status')->get();
         
         
 

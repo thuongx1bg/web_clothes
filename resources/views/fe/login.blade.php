@@ -18,6 +18,11 @@
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Đăng nhập</h2>
+						@if (session('status'))
+    							<div class="alert alert-danger" role="alert">
+            						{{ session('status') }}
+   									 </div>
+						@endif
 						<form action="{{route('login_customer')}}" method="POST">
 							@csrf
 							<input type="text" placeholder="Email" name="email"/>

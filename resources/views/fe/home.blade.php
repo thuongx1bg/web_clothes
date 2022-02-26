@@ -41,7 +41,7 @@
 							@foreach($sliders as $key=> $slider)
 							<div class="item {{$key==0 ?  'active' : ''}}">
 								<div class="col-sm-6">
-									<h1><span>H</span>-Highclub</h1>
+									<h1><span>OC</span>-SENSHOP</h1>
 									<h2>{{$slider->name}}</h2>
 									<p>{{$slider->description}}</p>
 									<button type="button"   class="btn btn-default get">Get it now</button>
@@ -119,13 +119,7 @@
 trẻ phát triển chiều cao vượt trội- NuBest Tall.</p>
 						</div><!--/brands_products-->
 						
-						<div class="price-range"><!--price-range-->
-							<h2>Price Range</h2>
-							<div class="well text-center">
-								 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
-								 <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
-							</div>
-						</div><!--/price-range-->
+						
 						
 						
 					
@@ -158,12 +152,12 @@ trẻ phát triển chiều cao vượt trội- NuBest Tall.</p>
 										</div>
 										
 								</div>
-								<div class="choose">
+								<!-- <div class="choose">
 									<ul class="nav nav-pills nav-justified">
 										<li><a href="#"><i class="fa fa-plus-square"></i>Yêu thích</a></li>
 										<li><a href="#"><i class="fa fa-plus-square"></i>So sánh</a></li>
 									</ul>
-								</div>
+								</div> -->
 							</div>
 						</div>
 						</a>

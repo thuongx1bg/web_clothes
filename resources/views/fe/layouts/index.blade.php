@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel='icon' href="https://file.hstatic.net/200000280689/file/logo_53e5f5c2a41a431aaf9b9ebb310f2abb.png"  />
+    <link rel='icon' href="https://www.sporter.vn/wp-content/uploads/2017/05/logo.png"  />
     @yield('title')
     <link href="/front-end/css/bootstrap.min.css" rel="stylesheet">
     <link href="/front-end/css/font-awesome.min.css" rel="stylesheet">
