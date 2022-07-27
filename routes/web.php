@@ -15,6 +15,9 @@ use App\Http\Controllers\FrontEndCart;
 use App\Http\Controllers\FrontEndLoginCheckout;
 use App\Http\Controllers\FrontEndProduct;
 use App\Http\Controllers\AdminRolesController;
+use App\Http\Controllers\Customer\CustomerController;
+use Illuminate\Support\Facades\DB;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,23 +28,24 @@ use App\Http\Controllers\AdminRolesController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Auth::routes();
 // back-end
 
 // login
 Route::get('/admin', [
-    AdminController::class,'loginAdmin'
+    AdminController::class, 'loginAdmin'
 ])->name('login');
-Route::post('/admin',[
-    AdminController::class,'postLoginAdmin'
+Route::post('/admin', [
+    AdminController::class, 'postLoginAdmin'
 ]);
 Route::get('/logout', [
     AdminController::class, 'logoutAdmin'
 ])->name('logoutAdmin');
 //
 
-Route::prefix('admin')->group(function(){
-    Route::prefix('settings')->group(function(){
+Route::prefix('admin')->group(function () {
+    Route::prefix('settings')->group(function () {
         Route::get('/', [
             SettingAdminController::class, 'index'
         ])->name('settings.index')->middleware('can:setting_list');
@@ -136,7 +140,7 @@ Route::prefix('admin')->group(function(){
             AdminOrderController::class, 'detail'
         ])->name('order.detail')->middleware('can:order_see');
     });
-    Route::prefix('users')->group(function(){
+    Route::prefix('users')->group(function () {
         Route::get('/', [
             AdminUserController::class, 'index'
         ])->name('users.index')->middleware('can:user_list');
@@ -155,7 +159,6 @@ Route::prefix('admin')->group(function(){
         Route::get('/delete/{id}', [
             AdminUserController::class, 'delete'
         ])->name('users.delete')->middleware('can:user_delete');
-        
     });
     Route::prefix('Roles')->group(function () {
         Route::get('/', [
@@ -176,11 +179,9 @@ Route::prefix('admin')->group(function(){
         Route::get('/delete/{id}', [
             AdminRolesController::class, 'delete'
         ])->name('roles.delete')->middleware('can:role_delete');
-        
     });
-    Route::get('Permission',function () {
+    Route::get('Permission', function () {
         return view('admin.not_permission');
-        
     })->name('not_permission');
 });
 
@@ -192,60 +193,68 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //front-end
 
-Route::get('trangchu',[
+Route::get('trangchu', [
     Fe_Home::class, 'index'
 ])->name('fe.home');
-Route::post('search',[
+Route::post('search', [
     Fe_Home::class, 'search'
 ])->name('search');
-Route::get('contact',[
+Route::get('contact', [
     Fe_Home::class, 'contact'
 ])->name('contact');
 
-Route::prefix('fe')->group(function(){
-    Route::prefix('dmsp')->group(function(){
-        Route::get('/{id}',[
-            CategoryFrontEnd::class,'index'
+Route::prefix('fe')->group(function () {
+    Route::prefix('dmsp')->group(function () {
+        Route::get('/{id}', [
+            CategoryFrontEnd::class, 'index'
         ])->name('categoryfe');
     });
-    Route::get('chi-tiet-san-pham/{id}',[
-        FrontEndProduct::class,'index'
+    Route::get('chi-tiet-san-pham/{id}', [
+        FrontEndProduct::class, 'index'
     ])->name('detailsp');
-    Route::post('save_cart',[
+    Route::post('save_cart', [
         FrontEndCart::class, 'save_cart'
     ])->name('save_cart');
-    Route::get('show_cart',[
+    Route::get('show_cart', [
         FrontEndCart::class, 'show_cart'
     ])->name('show_cart');
-    Route::get('delete_cart/{rowId}',[
+    Route::get('delete_cart/{rowId}', [
         FrontEndCart::class, 'delete_cart'
     ])->name('delete_cart');
-    Route::post('update_cart',[
+    Route::post('update_cart', [
         FrontEndCart::class, 'update_cart'
     ])->name('update_cart');
-    Route::get('checkout',[
+    Route::get('checkout', [
         FrontEndLoginCheckout::class, 'checkout'
     ])->name('checkout');
-    Route::get('login_checkout',[
+    Route::get('login_checkout', [
         FrontEndLoginCheckout::class, 'logincheckout'
     ])->name('login_checkout');
-    Route::post('register',[
+    Route::post('register', [
         FrontEndLoginCheckout::class, 'register'
     ])->name('register_customer');
-    Route::post('login_customer',[
+    Route::post('login_customer', [
         FrontEndLoginCheckout::class, 'login'
     ])->name('login_customer');
-    Route::get('logout_customer',[
+    Route::get('logout_customer', [
         FrontEndLoginCheckout::class, 'logout'
     ])->name('logout_customer');
-    Route::post('store_order',[
+    Route::post('store_order', [
         FrontEndLoginCheckout::class, 'store_order'
     ])->name('store_order');
-    Route::post('order_place',[
+    Route::post('order_place', [
         FrontEndLoginCheckout::class, 'order_place'
     ])->name('order_place');
-    Route::get('payment',[
+    Route::get('payment', [
         FrontEndLoginCheckout::class, 'payment'
     ])->name('payment');
+    Route::get('information_customer', function () {
+        $idCustomer = session()->get('id');
+        $customer = (DB::table('customers')->where('id', '=', $idCustomer)->get())[0];
+
+        return view('fe.information_customer', compact('customer'));
+    })->name('information_customer');
+
+    Route::post('edit_information_customer/{id}', [CustomerController::class, 'update'])->name('customer.edit');
 });
 //end- front-end

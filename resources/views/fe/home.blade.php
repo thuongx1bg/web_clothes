@@ -41,7 +41,7 @@
 							@foreach($sliders as $key=> $slider)
 							<div class="item {{$key==0 ?  'active' : ''}}">
 								<div class="col-sm-6">
-									<h1><span>OC</span>-SENSHOP</h1>
+									<h1><span>HN</span>-COMPUTER</h1>
 									<h2>{{$slider->name}}</h2>
 									<p>{{$slider->description}}</p>
 									<button type="button"   class="btn btn-default get">Get it now</button>

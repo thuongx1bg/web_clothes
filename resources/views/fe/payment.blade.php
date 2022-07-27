@@ -94,7 +94,7 @@
 						<label><input name="payment_option" value="1" type="checkbox" > Thanh toán bằng thẻ ATM <br>
 					--Ngân Hàng: Viettinbank <br>
 					--Stk: 123456789 <br>
-					--Tên chủ tài Khoản: Vũ Diệu Linh<br>
+					--Tên chủ tài Khoản: Quyết Chí<br>
 					--Nội dung chuyển khoản:  <h4>SP 
 					<?php
  

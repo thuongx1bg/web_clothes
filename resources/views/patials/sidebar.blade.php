@@ -5,7 +5,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-user-shield"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Admin  <sup>Ocsenshop </sup></div>
+                <div class="sidebar-brand-text mx-3">Admin  <sup>HNCOMPUTER </sup></div>
             </a>
 
             <!-- Divider -->

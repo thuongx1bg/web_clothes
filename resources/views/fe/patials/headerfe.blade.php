@@ -33,7 +33,8 @@
 				<div class="row">
 					<div class="col-md-4 clearfix">
 						<div class="logo pull-left">
-							<a href="{{route('fe.home')}}"><img style="height:39px; width:139px"  src="https://mcdn.nhanh.vn/store/15049/store_1604242587_766.png" alt="" /></a>
+							<a href="{{route('fe.home')}}"><img style="height:39px; width:139px"  src="{{asset('storage/logo/0a9d7358559e97c0ce8f.jpg')}}" alt="" /></a>
+							{{-- https://hanoicomputercdn.com/media/lib/19-02-2022/logo-hacomtrangch.png --}}
 						</div>
 						<!-- <div class="btn-group pull-right clearfix">
 							<div class="btn-group">
@@ -87,6 +88,7 @@
 								<?php
 									}else{
 								?>
+								<li><a  href="{{route('information_customer')}}"><i class="fa fa-user"></i> Thông tin</a></li>
 								<li><a  href="{{route('logout_customer')}}"><i class="fa fa-lock"></i> Đăng xuất</a></li>
 								<?php
 									}
